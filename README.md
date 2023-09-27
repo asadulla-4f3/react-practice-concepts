@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 2.  Using render prop of ReactJS
 3.  Using Context API in both class components and functional components
 
-<!-- The HOC's explained -->
+The HOC's explanation:
 
 ReactJS HOC components - Check the HOC's folder.
 
