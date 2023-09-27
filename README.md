@@ -11,60 +11,52 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### There are different ways lifting up the common state and props from the child components to the parent components.
 
-### `npm test`
+### 1. Using HOC's
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Using render prop of ReactJS
 
-### `npm run build`
+### 3. Using Context API in both class components and functional components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- The HOC's explained -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ReactJS HOC components - Check the HOC's folder.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+            Parent Component
+                    | name
+                    V
 
-### `npm run eject`
+    Component A     Component B     Component C
+                        | name          | name
+                        V               V
+                    Component D     Component E
+                                        | name
+                                        V
+                                    Component F
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ReactJS render prop.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### The term "render prop" refers to a technique for `sharing code` between react components using a `prop whose value is a function`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Using Context.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Context provides a way to `pass data through the component tree` without having to pass props down manually `at every level`.
 
-## Learn More
+### Remember these things for Context.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Create Context
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Provide Context
 
-### Code Splitting
+### 3. Consume Context
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### And there is a Context-type way where we can pass the props to particular component.
 
-### Analyzing the Bundle Size
+### Things to remember for Context-type -
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### This works only in Class Components.
 
-### Making a Progressive Web App
+### You can only subscribe to a single context using contextType
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### If you want to consume the props in multiple components then we need to use Consumer components of Context API
